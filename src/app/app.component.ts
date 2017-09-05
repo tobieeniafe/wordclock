@@ -47,14 +47,14 @@ export class AppComponent {
 
     if (this.minute == 0) {
       this.statement = `It's ${this.hourWords} o'clock`;
-    } else if (this.minute == 15) {
+    } else if (this.minute == 15 || this.minute == 30) {
       this.statement = `It's ${this.minuteWords} past ${this.hourWords}`;
-    }else if (this.minute <= 30) {
-      this.statement = `It's ${this.minuteWords} minutes past ${this.hourWords}`;
+    }else if (this.minute < 30) {
+      this.statement = `It's ${this.minuteWords} minute(s) past ${this.hourWords}`;
     } else if (this.minute == 45) {
      this.statement = `It's ${this.minuteWords} to ${this.words[this.hour+1] }`;
    }else if (this.minute > 30 && this.minute) {
-     this.statement = `It's ${this.words[60-this.minute]} minutes to ${this.words[this.hour+1] }`;
+     this.statement = `It's ${this.words[60-this.minute]} minute(s) to ${this.words[this.hour+1] }`;
     } else {
       this.statement = `It's ${this.hourWords} ${this.minuteWords} ${this.period}`;
     }
